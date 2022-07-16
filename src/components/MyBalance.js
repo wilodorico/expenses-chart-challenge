@@ -22,7 +22,7 @@ const BalanceCard = styled(Card)`
   color: ${colors.veryPaleOrange};
 
   .card-content h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
   }
