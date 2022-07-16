@@ -15,4 +15,8 @@ export default styled(Card)`
   padding: 1.8rem 2rem;
   margin-bottom: 1.4rem;
   border-radius: 1rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 1.5rem 1.2rem;
+  }
 `

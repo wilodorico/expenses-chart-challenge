@@ -31,6 +31,23 @@ const BalanceCard = styled(Card)`
     font-size: 1.8rem;
     font-weight: 700;
   }
+
+  @media screen and (max-width: 500px) {
+    .card-content h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content span {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .card-icon img {
+      width: 4rem;
+    }
+  }
 `
 
 export default MyBalance

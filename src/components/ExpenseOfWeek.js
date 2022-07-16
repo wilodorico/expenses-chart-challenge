@@ -23,6 +23,7 @@ const ExpenseOfWeek = () => {
             <li key={expense.day}>
               <ExpenseBar
                 amount={expense.amount}
+                txtAmount={`$${expense.amount}`}
                 bgcolor={expense.isTrue ? colors.cyan : colors.softRed}
               />
               {expense.day}
@@ -78,17 +79,6 @@ const CardExpense = styled(Card)`
     text-align: center;
   }
 
-  .expense-bar {
-    display: block;
-    text-align: center;
-    color: ${colors.mediumBrown};
-    width: 100%;
-    height: 50px;
-    background: ${colors.softRed};
-    border-radius: 4px;
-    margin-bottom: 0.4rem;
-  }
-
   .expense-list hr {
     margin: 1.8rem 0;
     height: 2px;
@@ -125,6 +115,41 @@ const CardExpense = styled(Card)`
 
   .last-month h5 {
     font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 1.3rem;
+
+    h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+    .expense-list li {
+      width: 2.1rem;
+      font-size: 0.7rem;
+    }
+
+    .this-month h4 {
+      font-size: 1rem;
+    }
+
+    .this-month span {
+    font-size: 2rem;
+  }
+
+  .last-month {
+    padding: 0.4rem 0 0;
+  }
+
+  .last-month span {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .last-month h5 {
+    font-size: 1rem;
+  }
   }
 `
 
