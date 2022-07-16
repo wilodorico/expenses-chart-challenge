@@ -3,6 +3,7 @@ export const colors = {
   cyan: 'hsl(186, 34%, 60%)',
   darkBrown: 'hsl(25, 47%, 15%)',
   mediumBrown: 'hsl(28, 10%, 53%)',
+  lightBrown: 'hsl(28, 10%, 92%)',
   cream: 'hsl(27, 66%, 92%)',
   veryPaleOrange: 'hsl(33, 100%, 98%)',
 }
