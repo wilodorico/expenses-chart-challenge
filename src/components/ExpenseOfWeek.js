@@ -5,10 +5,8 @@ import Card from '../UI/Card'
 import ExpenseBar from './ExpenseBar'
 
 const ExpenseOfWeek = () => {
-
-
-  const date = new Date();
-  let day = expenses[date.getDay() -1].day;
+  const date = new Date()
+  let day = expenses[date.getDay() - 1].day
 
   const newArrExpenses = expenses.map((expense) => {
     return { ...expense, isTrue: expense.day === day }
@@ -21,7 +19,9 @@ const ExpenseOfWeek = () => {
         <ul>
           {newArrExpenses.map((expense) => (
             <li key={expense.day}>
+              <span className='price'>${expense.amount}</span>
               <ExpenseBar
+                className='bars'
                 amount={expense.amount}
                 txtAmount={`$${expense.amount}`}
                 bgcolor={expense.isTrue ? colors.cyan : colors.softRed}
@@ -79,6 +79,28 @@ const CardExpense = styled(Card)`
     text-align: center;
   }
 
+  .expense-list li .price {
+    position: relative;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${colors.darkBrown};
+    color: ${colors.veryPaleOrange};
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  .expense-list li:hover .price {
+    opacity: 1;
+  }
+
   .expense-list hr {
     margin: 1.8rem 0;
     height: 2px;
@@ -121,12 +143,20 @@ const CardExpense = styled(Card)`
     padding: 1.3rem;
 
     h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
-  }
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
 
     .expense-list li {
       width: 2.1rem;
+      font-size: 0.7rem;
+    }
+
+    .expense-list li .price {
+      top: -10px;
+      left: -6px;
+      width: 45px;
+      height: 25px;
       font-size: 0.7rem;
     }
 
@@ -135,21 +165,21 @@ const CardExpense = styled(Card)`
     }
 
     .this-month span {
-    font-size: 2rem;
-  }
+      font-size: 2rem;
+    }
 
-  .last-month {
-    padding: 0.4rem 0 0;
-  }
+    .last-month {
+      padding: 0.4rem 0 0;
+    }
 
-  .last-month span {
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
+    .last-month span {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
 
-  .last-month h5 {
-    font-size: 1rem;
-  }
+    .last-month h5 {
+      font-size: 1rem;
+    }
   }
 `
 
