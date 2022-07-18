@@ -73,4 +73,4 @@ Users should be able to:
 
 ## Acknowledgments
 
-Thank you all ;)
+Thank @dazzlerabhi30800 Frontend Mentor
